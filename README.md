@@ -13,7 +13,7 @@
     - Invocação da ação: wsk action invoke --result div_pagamento
     - Invocação da ação (url): https://us-east.functions.cloud.ibm.com/api/v1/web/uff_pagamento/default/div_pagamento
 
-    ![alt text](https://raw.githubusercontent.com/fpgdesa/Trabalho3/main/modulo_paga.png)
+![alt text](https://raw.githubusercontent.com/fpgdesa/Trabalho3/main/modulo_paga.png)
 
 
 
