@@ -11,6 +11,12 @@
 
 
 
+# Ativação:
+
+    - Building docker container: docker-compose build web
+    - Run container on port 8000: docker-compose up -d
+
+
 
 # Visão Geral:
 
