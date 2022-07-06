@@ -12,7 +12,7 @@ Infos = {'metodo':'Boleto',
          'telefone':'',
          'cidade':'',
          'cep':'',
-         'valor':'R$ 510,00'
+         'valor':'R$ 510,00',
          'estado':'Rio de Janeiro',
          'pais':'Brasil'}
 
