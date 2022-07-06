@@ -4,8 +4,18 @@
  - O trabalho consiste na implementação da arquitetura serverless para gerar duas formas de pagamento: Boleto e PIX (aqui representado pela geração de um simples QR Code).
  
  - Dois serviços atuam para a realização dessas tarefas
+
+ - Um terceiro serviço gera o elemento div do módulo de pagamento
  
  - Os serviços foram implementados utilizando o framework da Apache Openwhisk
+
+
+
+
+# Visão Geral:
+
+![alt text](https://raw.githubusercontent.com/fpgdesa/Trabalho3/main/pagina.png)
+
 
 ## Serviço 1 - elemento div
     - A ação será invocada para gerar o elemento html responsável por exibir informações do produto comprado.
@@ -17,9 +27,4 @@
 
 
 
-
-
-# Visão Geral:
-
-![alt text](https://raw.githubusercontent.com/fpgdesa/Trabalho3/main/pagina.png)
 
