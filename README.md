@@ -31,6 +31,16 @@
 
 ![alt text](https://raw.githubusercontent.com/fpgdesa/Trabalho3/main/modulo_paga.png)
 
+## Serviço 2 - geração do QR code
+    - A ação é invocada para a geração de um QR code contendo um link de direcionamento
+    - Esta ação utiliza bibliotecas externas (pyqrcode e pypng)
+    - Um ambiente virtual foi gerado e comprimido em arquivo *.zip para a geração da ação
+    - Criação da ação: wsk action update qr_code qr_code.zip --kind python:3 --web True
+    - Invocação da ação: wsk action invoke qr_code -r
+    - Invocação da ação (url): https://us-east.functions.cloud.ibm.com/api/v1/web/uff_pagamento/default/qr_code
+
+
+
 
 
 

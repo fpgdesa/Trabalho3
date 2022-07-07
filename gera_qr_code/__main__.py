@@ -1,9 +1,13 @@
-import qrcode
+import pyqrcode
+import png
+from pyqrcode import QRCode
+import base64
 
-
-def gera_qr_code(params):
+def main(params):
     
-    img = qrcode.make('http://www.uff.br')
+    img = pyqrcode.create('http://www.uff.br')
+    
+    img.png('myqr.png', scale = 6)
 
 
-    return {'image':img}
+    return {'image':str(base64.b64encode(open("myqr.png", "rb").read()))}

@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import urllib
 
-def gera_boleto(args):
+def main(args):
 
 
     nome = 'Fernando' if args.get('nome') is None else args.get('nome')
