@@ -1,6 +1,7 @@
 import cv2 
 import numpy as np
 import urllib
+import base64
 
 def main(args):
 
@@ -18,7 +19,7 @@ def main(args):
     url = 'https://raw.githubusercontent.com/fpgdesa/Study/master/boleto.png'
      
     
-    resp = urllib.urlopen(url)
+    resp = urllib.request.urlopen(url)
     image = np.asarray(bytearray(resp.read()), dtype="uint8")
     boleto = cv2.imdecode(image, cv2.IMREAD_COLOR)
 
@@ -38,9 +39,10 @@ def main(args):
     out = cv2.putText(out, valor, position_valor1,cv2.FONT_HERSHEY_SIMPLEX, 0.3, (0,0,0), 1,cv2.LINE_AA,False)
 
     out = cv2.putText(out, valor, position_valor2,cv2.FONT_HERSHEY_SIMPLEX, 0.3, (0,0,0), 1,cv2.LINE_AA,False)
-
     
-    return {'imagem':out}
+    cv2.imwrite('temp.png',out)
+    
+    return {'imagem':str(base64.b64encode(open("temp.png", "rb").read()))}
 
 
 

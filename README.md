@@ -1,6 +1,5 @@
 # Trabalho 3
 
-
  - O trabalho consiste na implementação da arquitetura serverless para gerar duas formas de pagamento: Boleto e PIX (aqui representado pela geração de um simples QR Code).
  
  - Dois serviços atuam para a realização dessas tarefas
@@ -15,8 +14,6 @@
 
     - Building docker container: docker-compose build web
     - Run container on port 8000: docker-compose up -d
-
-
 
 # Visão Geral:
 
@@ -38,6 +35,17 @@
     - Criação da ação: wsk action update qr_code qr_code.zip --kind python:3 --web True
     - Invocação da ação: wsk action invoke qr_code -r
     - Invocação da ação (url): https://us-east.functions.cloud.ibm.com/api/v1/web/uff_pagamento/default/qr_code
+
+## Serviço 3 - geração do boleto bancário
+    - A ação é invocada para a geração de um boleto bancário contendo informações do usuário no ato da compra de um computador
+    - Esta ação utiliza bibliotecas externas de processamento de imagens (OpenCV) e processamento de dados (NumPy)
+    - Como o ambiente virtual gerado ultrapassa o limite de armazenamento do OpenWhisk, uma imagem docker foi gerada
+    - O arquivo Dockerfile contém as instruções da imagem gerada utilizando como base a imagem 'openwhisk/python3action:latest'
+    - Após a realização do build na imagem, ela é enviada para o dockerhub
+    - Criação da ação: wsk action create gera_boleto __main__.py --docker fpgdesa/python3action:boleto_docker
+    - Invocação da ação: wsk action invoke gera_boleto -r
+    - Invocação da ação (url): https://us-east.functions.cloud.ibm.com/api/v1/web/uff_pagamento/default/gera_boleto
+    - O dicionário fornecido pela ação contém a imagem do boleto gerado codificado utilizando a biblioteca Base64
 
 
 
