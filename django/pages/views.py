@@ -45,13 +45,7 @@ class StartPage(View):
         output = output.replace("\\n","").replace("\\","").replace("\n","")[17:-2]
 
 
-
-
-
-
-
-
-        return render(request,"index.html",  context={'div_pagamento': output})
+        return render(request,"index_watch.html",  context={'div_pagamento': output})
         
 
 @csrf_exempt
